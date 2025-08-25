@@ -53,7 +53,7 @@ android/key.properties
 **/*.jks
 .env
 .env.*
-
+firebase.json
 # CocoaPods (large, generated locally)
 ios/Pods/
 macos/Pods/
