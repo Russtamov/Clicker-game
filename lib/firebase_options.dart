@@ -15,6 +15,17 @@ import 'package:flutter/foundation.dart'
 /// );
 /// ```
 class DefaultFirebaseOptions {
+  // Read API keys from compile-time environment to avoid committing secrets
+  static const String _webApiKey =
+      String.fromEnvironment('FIREBASE_WEB_API_KEY', defaultValue: '');
+  static const String _androidApiKey =
+      String.fromEnvironment('FIREBASE_ANDROID_API_KEY', defaultValue: '');
+  static const String _iosApiKey =
+      String.fromEnvironment('FIREBASE_IOS_API_KEY', defaultValue: '');
+  static const String _macosApiKey =
+      String.fromEnvironment('FIREBASE_MACOS_API_KEY', defaultValue: '');
+  static const String _windowsApiKey =
+      String.fromEnvironment('FIREBASE_WINDOWS_API_KEY', defaultValue: '');
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
       return web;
@@ -41,7 +52,7 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyAKLBy4kpdVihcHl7QMI9XJ9WHneBPKS48',
+    apiKey: _webApiKey,
     appId: '1:996516509004:web:cf40d95616bbd25f0e8be9',
     messagingSenderId: '996516509004',
     projectId: 'clicker-game-app',
@@ -50,7 +61,7 @@ class DefaultFirebaseOptions {
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyD47yAy235IC2A67dtIv8lzsmBgwagaQ5g',
+    apiKey: _androidApiKey,
     appId: '1:996516509004:android:5625c322406e05470e8be9',
     messagingSenderId: '996516509004',
     projectId: 'clicker-game-app',
@@ -58,7 +69,7 @@ class DefaultFirebaseOptions {
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyAQ7DAbFo6Jb2MYyLvYYfhNK2ahuM6Nexo',
+    apiKey: _iosApiKey,
     appId: '1:996516509004:ios:fac554619b9dd2ba0e8be9',
     messagingSenderId: '996516509004',
     projectId: 'clicker-game-app',
@@ -67,7 +78,7 @@ class DefaultFirebaseOptions {
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyAQ7DAbFo6Jb2MYyLvYYfhNK2ahuM6Nexo',
+    apiKey: _macosApiKey,
     appId: '1:996516509004:ios:fac554619b9dd2ba0e8be9',
     messagingSenderId: '996516509004',
     projectId: 'clicker-game-app',
@@ -76,7 +87,7 @@ class DefaultFirebaseOptions {
   );
 
   static const FirebaseOptions windows = FirebaseOptions(
-    apiKey: 'AIzaSyAKLBy4kpdVihcHl7QMI9XJ9WHneBPKS48',
+    apiKey: _windowsApiKey,
     appId: '1:996516509004:web:483bc6631f184c7d0e8be9',
     messagingSenderId: '996516509004',
     projectId: 'clicker-game-app',
