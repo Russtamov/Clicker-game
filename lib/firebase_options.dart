@@ -16,16 +16,26 @@ import 'package:flutter/foundation.dart'
 /// ```
 class DefaultFirebaseOptions {
   // Read API keys from compile-time environment to avoid committing secrets
-  static const String _webApiKey =
-      String.fromEnvironment('FIREBASE_WEB_API_KEY', defaultValue: '');
-  static const String _androidApiKey =
-      String.fromEnvironment('FIREBASE_ANDROID_API_KEY', defaultValue: '');
-  static const String _iosApiKey =
-      String.fromEnvironment('FIREBASE_IOS_API_KEY', defaultValue: '');
-  static const String _macosApiKey =
-      String.fromEnvironment('FIREBASE_MACOS_API_KEY', defaultValue: '');
-  static const String _windowsApiKey =
-      String.fromEnvironment('FIREBASE_WINDOWS_API_KEY', defaultValue: '');
+  static const String _webApiKey = String.fromEnvironment(
+    'FIREBASE_WEB_API_KEY',
+    defaultValue: '',
+  );
+  static const String _androidApiKey = String.fromEnvironment(
+    'FIREBASE_ANDROID_API_KEY',
+    defaultValue: '',
+  );
+  static const String _iosApiKey = String.fromEnvironment(
+    'FIREBASE_IOS_API_KEY',
+    defaultValue: '',
+  );
+  static const String _macosApiKey = String.fromEnvironment(
+    'FIREBASE_MACOS_API_KEY',
+    defaultValue: '',
+  );
+  static const String _windowsApiKey = String.fromEnvironment(
+    'FIREBASE_WINDOWS_API_KEY',
+    defaultValue: '',
+  );
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
       return web;
