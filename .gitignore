@@ -43,3 +43,25 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# Secrets and credentials (do not commit)
+android/app/google-services.json
+ios/Runner/GoogleService-Info.plist
+macos/Runner/GoogleService-Info.plist
+android/key.properties
+**/*.keystore
+**/*.jks
+.env
+.env.*
+
+# CocoaPods (large, generated locally)
+ios/Pods/
+macos/Pods/
+
+# Xcode user data
+**/*.xcuserstate
+**/*.xcworkspace/xcuserdata/
+**/*.xcodeproj/xcuserdata/
+
+# Flutter metadata (local only)
+.metadata
